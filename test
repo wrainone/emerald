@@ -1,0 +1,11 @@
+#!/usr/bin/groovy
+// Scripted Pipeline
+node {
+   stage('test1') { // for display purposes
+      ansiblePlaybook(
+        playbook: '/etc/ansible/ios-facts.yml',
+        credentialsId: 'ansible', 
+        limit: '$host',
+       )
+   }
+ }
